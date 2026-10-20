@@ -220,7 +220,6 @@ class wireguard extends eqLogic {
 		if ($this->getConfiguration('PeristentKeepalive') != '') {
 			$config .= "PersistentKeepalive = " . $this->getConfiguration('PeristentKeepalive', 25) . "\n";
 		}
-		unlink(__DIR__ . '/../../data/wg_' . $this->getId() . '.conf');
 		file_put_contents(__DIR__ . '/../../data/wg_' . $this->getId() . '.conf', $config);
 	}
 
